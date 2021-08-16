@@ -1,9 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import Menu from '../views/Menu'
+import Restaurants from '../views/Restaurants'
 import About from '../views/About'
-import Orders from '../views/Orders'
+import Customers from '../views/Customers'
 import Login from '../views/Login'
-import Register from '../views/Register'
+import Driver from '../views/Driver'
 
 const routes = [
     {
@@ -12,9 +12,9 @@ const routes = [
         component: Login
     },
     {
-        path: '/menu',
-        name: 'menu',
-        component: Menu
+        path: '/restaurant',
+        name: 'restaurant',
+        component: Restaurants
     },
     {
         path: '/about',
@@ -22,14 +22,14 @@ const routes = [
         component: About
     },
     {
-        path: '/orders',
-        name: 'Orders',
-        component: Orders
+        path: '/customers',
+        name: 'customers',
+        component: Customers
     },
     {
-        path: '/register',
-        name: 'Register',
-        component: Register
+        path: '/driver',
+        name: 'driver',
+        component: Driver
     }
 ]
 

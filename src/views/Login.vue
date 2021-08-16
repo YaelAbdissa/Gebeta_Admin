@@ -11,7 +11,7 @@
           </div>    
           <button type="submit" class="btn">Login</button>
           <div class="mb-3"><br/>
-              <label>Don't have account <router-link to='/register'>Register here</router-link></label>
+              <label>----  Admin  ----</label>
           </div>
       </form>
   </div>
@@ -38,7 +38,7 @@ export default {
   methods:{
         async login(){
           const obj = { email:this.email, password:this.password};
-          const res = await fetch('api/auth/login', {
+          const res = await fetch('api/admin/login', {
                 method: 'POST',
                 headers: {'Content-type': 'application/json'},
                 body: JSON.stringify(obj)
@@ -46,8 +46,9 @@ export default {
 
           const data = await res.json()
           if(res.status === 200){
-                store.$commit('setToken', data.token)
-                this.$router.push('menu')
+                console.log('token --- '+data.token)
+                store.commit('setToken', arguments[1] = data.token)
+                this.$router.push('restaurant')
             }else{
                 this.notifications.push({id: 1001, message: data.message,type: 'dismissible'})
           }

@@ -3,10 +3,11 @@
         <div><img src="/api/images/101/favicon.ico"><h1>{{ title }} </h1></div>
         <div>
         <Button 
-            @click="$router.push('menu')"
-            :text="'Menu' " 
+            @click="$router.push('restaurant')"
+            :text="'Restaurant' " 
             :color="'rgba(107, 155, 107, 0.911)' "/>
-        <Button @click="$router.push('orders')" :text=" 'Orders' "  :color= "'#63915f'" />
+        <Button @click="$router.push('customers')" :text=" 'Customers' "  :color= "'#5f9186'" />
+        <Button @click="$router.push('driver')" :text=" 'Drivers' "  :color= "'#bfb45c'" />
         <router-link to='/'>
             <Button :text=" 'Logout'"  />
         </router-link>
@@ -24,8 +25,6 @@ export default {
     },
     components:{
         Button
-    },
-    computed: {
     }
 }
 </script>

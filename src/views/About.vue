@@ -5,11 +5,6 @@
 
 <script>
 export default {
-    name: 'About',
-    props: {
-        showAddItem: Boolean,
-        update: Boolean
-    },
-    emits:['toggle-item','update-item']
+    name: 'About'
 }
 </script>

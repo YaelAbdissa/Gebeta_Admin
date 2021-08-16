@@ -1,4 +1,4 @@
-# restaurant
+# Gebeta-admin
 
 ## Project setup
 ```
