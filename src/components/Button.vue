@@ -1,5 +1,5 @@
 <template>
-    <button :style="{background: color}">{{text}} </button>
+    <button :style="{backgroundImage: color}">{{text}} </button>
 </template>
 
 <script>

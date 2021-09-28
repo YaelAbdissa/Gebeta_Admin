@@ -20,7 +20,6 @@
 
 <script>
 import '@/assets/styles/style.css';
-import store from '../store'
 import NotificationList from '../components/NotificationList'
 
 export default {
@@ -39,22 +38,26 @@ export default {
         async login(){
           const obj = { email:this.email, password:this.password};
           const res = await fetch('api/admin/login', {
-                method: 'POST',
-                headers: {'Content-type': 'application/json'},
-                body: JSON.stringify(obj)
+            method: 'POST',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify(obj)
           })
 
           const data = await res.json()
           if(res.status === 200){
-                console.log('token --- '+data.token)
-                store.commit('setToken', arguments[1] = data.token)
+                localStorage.setItem('token',JSON.stringify(data.token))
                 this.$router.push('restaurant')
             }else{
-                this.notifications.push({id: 1001, message: data.message,type: 'dismissible'})
+                this.showNotification(data.message,1001)
           }
         },
         removeNotification(id){
-            this.notifications = this.notifications.filter((notif) => notif.id !== id)
+          this.notifications = this.notifications.filter((notif) => notif.id !== id)
+        },
+        showNotification(msg, nid){
+          let show = true;
+          this.notifications.forEach((notif) => {if(notif.id == nid){show = false}})
+          if(show){this.notifications.push({id: nid, message: msg,type: 'dismissible'})}
         }
     }
 }
