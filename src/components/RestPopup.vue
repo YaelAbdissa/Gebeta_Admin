@@ -20,7 +20,7 @@
                     {{"'" + JSON.parse(rest.address).lat}}</span>
                 <GoogleMap
                     v-if="rest.address.charAt(0)=='{'"
-                    api-key="AIzaSyDsiGbsZBlyERrJPm49XOY8oBO5sTnmLx0"
+                    api-key=""
                     style="width: 100%; height: 300px; margin-bottom: 5px;"
                     :center="JSON.parse(rest.address)"
                     :zoom="20">
